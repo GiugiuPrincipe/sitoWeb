@@ -1,0 +1,264 @@
+:root {
+  --background:  #E7E6E6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  /* Stili per schermi più piccoli */
+  body {
+      font-size: 1.4rem;
+  }
+  /* Aggiungi altre regole necessarie */
+}
+
+/* Stile della pagina completa */
+body {
+  background: radial-gradient(ellipse at top, gold, transparent),
+              radial-gradient(ellipse at bottom, purple, transparent);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  font-family: Georgia, serif;
+  padding: 2.5rem; /* 5rem diviso per uniformità */
+}
+
+/* Slider principale */
+#slider,
+#slider2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1px;
+    font-size: 2.5rem; /* 25px diviso per uniformità */
+}
+
+#sliderValue {
+    display: flex;
+    font-weight: 500;
+}
+
+#sliderValue span {
+    background: linear-gradient(to right, black, purple);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+}
+
+.start {
+  opacity: 0;
+}
+
+.animation {
+  animation: fade 0.3s forwards; /* 0.3s diviso per uniformità */
+}
+
+@keyframes fade {
+  0%{
+      opacity: 0;
+      transform: translateY(-20px) rotateZ(35deg);
+  }
+  100%{
+      opacity: 1;
+      transform: translateY(0px) rotateZ(0deg);
+  }
+}
+
+.holder-animation {
+  animation: holder 4s;
+}
+
+@keyframes holder {
+  0%{
+      opacity: 1;
+  }
+  95%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+  }
+}
+
+.span a {
+    text-decoration: none;
+            background: linear-gradient(to right, black, purple); /* Gradiente da sinistra a destra */
+            -webkit-background-clip: text; /* Per il supporto a WebKit (Chrome, Safari) */
+            -moz-background-clip: text; /* Aggiunto per Firefox */
+            color: transparent; /* Rende il testo trasparente */
+            display: inline-block; /* Assicura che il gradiente si applichi solo al testo */
+    }
+
+.span a:visited {
+    /* Stesso gradiente per il colore del testo dopo essere stato cliccato */
+            background: linear-gradient(to right, black, purple);
+    }
+
+
+/* Immagini */
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* 3rem diviso per uniformità */
+  width: 100%;
+  height: auto;
+  max-width: 80rem;
+  margin: 1rem auto; /* 2rem diviso per uniformità */
+  margin-bottom: -0.25rem; /* -0.5rem diviso per uniformità */
+}
+
+/* Caratteristiche delle card */
+.card {
+  width: 7.3rem;
+  border: 0.1rem solid black;
+  border-radius: 5rem; /* 20px diviso per uniformità */
+  height: 20rem;
+  overflow: hidden;
+  transition: 0.7s ease-in-out;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 1);
+  flex: 0.75;
+}
+
+/* Immagini all'interno delle card */
+.card img {
+  position: relative;
+  height: 25rem;
+  object-fit: cover;
+  transition: 0.7s ease-in-out;
+  align-self: center;
+  margin: auto;
+}
+
+/* Effetti sulle card durante l'hover */
+.card:hover {
+  flex: 0.8;
+  font-weight: bold;
+  cursor: grab;
+  border-radius: 5rem;
+}
+
+/* Centrare immagine quando si passa col cursone */
+.card:nth-child(1) img {
+  transform: translate(-35%, -59%);
+  top: 50%;
+  left: 50%;
+}
+
+.card:nth-child(2) img {
+  transform: translate(-51%, -59%);
+  top: 50%;
+  left: 50%;
+}
+
+.card:nth-child(3) img {
+  transform: translate(-49%, -40%);
+  top: 50%;
+  left: 50%;
+}
+
+/* Icone social inferiori */
+.icon {
+  display: flex;
+  gap: 1.5rem; /* 1rem diviso per uniformità */
+  max-width: 80rem;
+  margin: 1rem;
+  justify-content: center;
+}
+
+ul {
+  margin: 0;
+  display: flex;
+}
+
+ul li {
+  list-style: none;
+  margin: 0 1rem;
+}
+
+ul li a {
+  display: block;
+  position: relative;
+  width: 10rem; /* 100px diviso per uniformità */
+  height: 10rem; /* 100px diviso per uniformità */
+  line-height: 10rem; /* 100px diviso per uniformità */
+  font-size: 4rem; /* 40px diviso per uniformità */
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin: 1.5rem; /* 30px diviso per uniformità */
+  transition: 0.5s;
+}
+
+ul li a span {
+  position: absolute;
+  transition: transform 0.9s;
+}
+
+ul li a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+
+ul li a span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+}
+
+ul li a span:nth-child(1),
+ul li a span:nth-child(3) {
+  width: 100%;
+  height: 0.3rem; /* 3px diviso per uniformità */
+  background: black;
+}
+
+ul li a:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s;
+}
+
+ul li a:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 1s;
+}
+
+ul li a span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+
+ul li a span:nth-child(4) {
+  top: 0;
+  right: 0;
+  transform: scale(0);
+  transform-origin: top;
+}
+
+ul li a span:nth-child(2),
+ul li a span:nth-child(4) {
+  width: 0.3rem; /* 3px diviso per uniformità */
+  height: 100%;
+  background: black;
+}
+
+ul li a:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: top;
+  transition: transform 1s;
+}
+
+ul li a:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: transform 1s;
+}

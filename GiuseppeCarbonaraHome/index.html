@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giuseppe Carbonara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styleMenu.css">
+</head>
+<body>
+    <div class="content">
+        <div id="slider">
+            <div class="span">Ciao, sono</div>
+            <div class="span" id="sliderValue"></div>
+            <div class="span" id="sliderValue2"></div>
+        </div>
+        <script src="main.js"></script>
+        <div id="slider2">
+            <div class="span">Clicca <a href="indexQui.html" class="pagina-link">qui</a> per conoscermi meglio.</div>
+        </div>
+        <!-- Aggiungi il link alla libreria GSAP (assicurati di scaricarla o collegarti a una versione CDN) -->
+        <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+
+        <!-- Aggiungi uno script per gestire l'evento di clic -->
+        <script>
+            document.querySelector('.pagina-link').addEventListener('click', function (event) {
+                // Previeni il comportamento predefinito del link
+                event.preventDefault();
+
+                // Aggiungi un'animazione o un effetto di transizione
+                gsap.to('.content', { opacity: 0, duration: 1, onComplete: function() {
+                    // Dopo l'animazione, reindirizza alla nuova pagina
+                    window.location.href = event.target.getAttribute('href');
+                } });
+            });
+        </script>
+        <div class="image">
+            <figure class="card">
+                <img src="Immagini/Foto%20Facebook%20Giuseppe.jpg">
+            </figure>
+            <figure class="card">
+                <img src="Immagini/Foto%20Instagram%20Giuseppe.jpg">
+            </figure>
+            <figure class="card">
+                <img src="Immagini/Fototessera%20Giuseppe%20Carbonara.jpg">
+            </figure>
+        </div>
+        <div class="icon">
+            <ul>
+                <li>
+                    <a class="facebook" href="https://www.facebook.com/giuseppeelprincipe.carbonara/">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="instagram" href="https://www.instagram.com/giuseppe__carbonara/">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="linkedin" href="https://www.linkedin.com/in/giuseppecarbonara/">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
