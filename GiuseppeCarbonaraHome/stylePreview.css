@@ -8,11 +8,9 @@
 }
 
 @media screen and (max-width: 768px) {
-  /* Stili per schermi più piccoli */
   body {
       font-size: 1.4rem;
   }
-  /* Aggiungi altre regole necessarie */
 }
 
 /* Stile della pagina completa */
