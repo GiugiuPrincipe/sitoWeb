@@ -1,67 +1,402 @@
-*
-{
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    background: radial-gradient(ellipse at top, gold, transparent),
-                radial-gradient(ellipse at bottom, purple, transparent);
+.header {
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+    align-items: center;
+    background-color: black;
+    color: #D4AF37;
+    padding: 10px;
 }
 
-#header{
+/*Caratteristica posizione logo*/
+.logo {
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    height: auto;
+}  
+
+.card {
+    width: 100px;
+    height: 100px;
+}
+  
+.card img {
+    position: relative;
+    height: 100px;
+}
+
+/*Caratteristica titolo*/
+.header-content {
+    text-align: right;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.menu {
+    display: grid;
+    align-items: center;
     justify-content: center;
-    gap: 1px;
-    font-size: 2.5rem; /* 25px diviso per uniformità */
-    margin-top: 20px;
+    gap: 5rem;
 }
 
-ul {
-    position: relative;
+a {
+    color: #D4AF37;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.list {
     display: flex;
-    flex-direction: row;
-    gap: 7px;
-    border: 2px solid black; /* Aggiungi un bordo di 2px nero */
-    padding: 10px; /* Aggiungi spazio interno al bordo */
-}
-
-ul li {
-    position: relative;
+    gap: 3rem;
     list-style: none;
 }
 
-ul li a {
+.list-item {
+    color: #fff;
+    padding: .5rem;
     position: relative;
-    font-size: 2em;
+}
+
+
+/* Icone social*/
+.icon {
+    gap: 25px;
+    margin: 30px;
+    justify-content: right;
+  }
+  
+  ul {
+    display: flex;
+    margin: 10px;
+  }
+  
+  ul li {
+    list-style: none;
+  }
+  
+  ul li a {
+    display: block;
+    position: relative;
+    width: 50px; /* 100px diviso per uniformità */
+    height: 50px; /* 100px diviso per uniformità */
+    line-height: 50px; /* 100px diviso per uniformità */
+    font-size: 20px; /* 40px diviso per uniformità */
+    text-align: center;
     text-decoration: none;
-    line-height: 1.25em;
-    letter-spacing: 2px;
-    color: transparent;
-    -webkit-text-stroke: 1px black;
-}
-
-ul li a::before {
-    content: attr(data-text);
+    color: #D4AF37;
+    margin: 10px; /* 30px diviso per uniformità */
+    transition: 0.5s;
+  }
+  
+  ul li a span {
     position: absolute;
-    color: var(--clr);
-    width: 0;
-    overflow: hidden;
-    transition: 1s;
-    border-right: 8px solid var(--clr);
-    -webkit-text-stroke: 1px black;
-}
-
-ul li a:hover::before {
+    transition: transform 0.9s;
+  }
+  
+  ul li a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform-origin: right;
+  }
+  
+  ul li a span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    transform-origin: left;
+  }
+  
+  ul li a span:nth-child(1),
+  ul li a span:nth-child(3) {
     width: 100%;
-    filter: drop-shadow(0 0 25px var(--clr));
+    height: 0.3rem; /* 3px diviso per uniformità */
+    background: #D4AF37;
+  }
+  
+  ul li a:hover span:nth-child(1) {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s;
+  }
+  
+  ul li a:hover span:nth-child(3) {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 1s;
+  }
+  
+  ul li a span:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+  }
+  
+  ul li a span:nth-child(4) {
+    top: 0;
+    right: 0;
+    transform: scale(0);
+    transform-origin: top;
+  }
+  
+  ul li a span:nth-child(2),
+  ul li a span:nth-child(4) {
+    width: 0.3rem; /* 3px diviso per uniformità */
+    height: 100%;
+    background: #D4AF37;
+  }
+  
+  ul li a:hover span:nth-child(2) {
+    transform: scale(1);
+    transform-origin: top;
+    transition: transform 1s;
+  }
+  
+  ul li a:hover span:nth-child(4) {
+    transform: scale(1);
+    transform-origin: bottom;
+    transition: transform 1s;
+  }
+
+  /*DIV Container Menu*/
+.container {
+    background-color: #D4AF37;
+    padding: 1rem;
+    border: 3.5px solid black;
 }
 
+
+
+/*
+.slider {
+    width: 100%;
+    overflow: hidden;
+
+}*/
+
+/*Parte centrale del body*/
+.main-content {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    justify-content: center;
+    align-items: stretch; /* Per estendere l'altezza a 100% */
+    min-height: 100vh; /* Altezza minima al 100% della viewport */
+    background: black;
+    color: #D4AF37;
+    /*background: radial-gradient(ellipse at top, #D4AF37, transparent),
+                radial-gradient(ellipse at bottom, purple, transparent);*/
+}
+
+.body-content {
+    width: 100%; /* Regola la larghezza desiderata */
+    text-align: center;
+}
+
+/*Zona immagine*/
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75%;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  /*Proprio la card*/
+  .card-body {
+    position: relative;
+    border: 0.2rem solid #D4AF37;
+    overflow: hidden;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+  }
+  
+  /* Immagini all'interno delle card */
+  .card-body img {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: -55px; /* Regola la posizione verso il basso */
+    left: 83px; /* Regola la posizione verso sinistra */
+    transform: scale(1.4); /* Modifica il valore di scala a seconda del livello di zoom desiderato */
+  }
+
+.sidebar {
+    justify-content: center;
+    align-items: stretch; /* Per estendere l'altezza a 100% */
+    min-height: 100vh; /* Altezza minima al 100% della viewport */
+    background: #D4AF37;
+    color: black;
+    width: 100%; /* Regola la larghezza desiderata */
+    text-align: center;
+}
+
+.sidebar h2 {
+    font-size: 2rem;
+    text-align: center; /* Centra orizzontalmente la scritta */
+    margin: 50px 0; /* Aggiungi margine sopra e sotto al titolo */
+}
+
+.sidebar paragraph1 {
+    font-size: 125%;
+    color: black;
+    white-space: pre-line;
+}
+
+.sidebar paragraph2 {
+    display: block;
+    font-size: 125%; /* Imposta la dimensione del carattere del paragrafo */
+    color: black; /* Imposta il colore del testo del paragrafo */
+    text-align: right; /* Centra orizzontalmente il testo */
+    white-space: pre-line; /* Fa sì che i caratteri di ritorno a capo siano rispettati */
+    position: relative; /* Imposta il posizionamento assoluto */
+    bottom: -30%; /* Distanza dal basso */
+    left: -2.5%;
+}
+
+.main-content-2 {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 150vh;
+}
+
+.section-1 {
+  background: #D4AF37;
+  color: black;
+  width: 100%; /* Regola la larghezza desiderata */
+  text-align: center;
+  border-bottom: 3.5px solid black; /* Aggiunge una riga di bordo nera alla fine */
+}
+
+.section-1 h2 {
+  font-size: 2rem;
+  text-align: center; /* Centra orizzontalmente la scritta */
+  margin: 50px 0; /* Aggiungi margine sopra e sotto al titolo */
+}
+
+.section-1 paragraph1 {
+  font-size: 125%;
+  color: black;
+  white-space: pre-line;
+}
+
+.section-1 paragraph2 {
+  display: block;
+  font-size: 125%; /* Imposta la dimensione del carattere del paragrafo */
+  color: black; /* Imposta il colore del testo del paragrafo */
+  text-align: left; /* Centra orizzontalmente il testo */
+  white-space: pre-line; /* Fa sì che i caratteri di ritorno a capo siano rispettati */
+  position: relative; /* Imposta il posizionamento assoluto */
+  bottom: -10%; /* Distanza dal basso */
+  left: 2.5%;
+}
+
+.section-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: #D4AF37;
+}
+
+.section-3 {
+  display: flex;
+  background: #D4AF37;
+  color: black;
+}
+
+.section-4 {
+  background: black;
+  color: #D4AF37;
+  width: 100%; /* Regola la larghezza desiderata */
+  text-align: center;
+  border-top: 3.5px solid #D4AF37; /* Aggiunge una riga di bordo nera alla fine */
+}
+
+.section-4 h2 {
+  font-size: 2rem;
+  text-align: center; /* Centra orizzontalmente la scritta */
+  margin: 50px 0; /* Aggiungi margine sopra e sotto al titolo */
+}
+
+.section-4 paragraph1 {
+  font-size: 125%;
+  color: #D4AF37;
+  white-space: pre-line;
+}
+
+.section-4 paragraph2 {
+  display: block;
+  font-size: 125%; /* Imposta la dimensione del carattere del paragrafo */
+  color: #D4AF37; /* Imposta il colore del testo del paragrafo */
+  text-align: right; /* Centra orizzontalmente il testo */
+  white-space: pre-line; /* Fa sì che i caratteri di ritorno a capo siano rispettati */
+  position: relative; /* Imposta il posizionamento assoluto */
+  bottom: -10%; /* Distanza dal basso */
+  left: -2.5%;
+}
+
+/*Zona immagine*/
+.image-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/*Proprio la card*/
+.card-body-2 {
+  position: relative;
+  border: 0.2rem solid #D4AF37;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+/* Immagini all'interno delle card */
+.card-body-2 img {
+  display: block;
+  width: 100%;
+}
+
+/*Zona immagine*/
+.image-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/*Proprio la card*/
+.card-body-3 {
+  position: relative;
+  border: 0.2rem solid black;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+/* Immagini all'interno delle card */
+.card-body-3 img {
+  display: block;
+  width: 100%;
+}
+
+
+
+/*footer {
+    background-color: #D4AF37;
+    color: black;
+    border: 3.5px solid black;
+    text-align: center;
+    padding: 5px;
+}*/
