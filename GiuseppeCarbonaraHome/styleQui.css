@@ -69,16 +69,14 @@ a {
     justify-content: right;
   }
   
-  ul {
+.icon  ul {
     display: flex;
     margin: 10px;
   }
-  
-  ul li {
+  .icon  ul li {
     list-style: none;
   }
-  
-  ul li a {
+  .icon  ul li a {
     display: block;
     position: relative;
     width: 50px; /* 100px diviso per uniformità */
@@ -91,71 +89,59 @@ a {
     margin: 10px; /* 30px diviso per uniformità */
     transition: 0.5s;
   }
-  
-  ul li a span {
+  .icon  ul li a span {
     position: absolute;
     transition: transform 0.9s;
   }
-  
-  ul li a span:nth-child(1) {
+  .icon  ul li a span:nth-child(1) {
     top: 0;
     left: 0;
     transform-origin: right;
   }
-  
-  ul li a span:nth-child(3) {
+  .icon  ul li a span:nth-child(3) {
     bottom: 0;
     left: 0;
     transform-origin: left;
   }
-  
-  ul li a span:nth-child(1),
-  ul li a span:nth-child(3) {
+  .icon  ul li a span:nth-child(1),.icon  ul li a span:nth-child(3) {
     width: 100%;
     height: 0.3rem; /* 3px diviso per uniformità */
     background: #D4AF37;
   }
-  
-  ul li a:hover span:nth-child(1) {
+  .icon  ul li a:hover span:nth-child(1) {
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 1s;
   }
-  
-  ul li a:hover span:nth-child(3) {
+  .icon  ul li a:hover span:nth-child(3) {
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 1s;
   }
-  
-  ul li a span:nth-child(2) {
+  .icon  ul li a span:nth-child(2) {
     top: 0;
     left: 0;
     transform: scale(0);
     transform-origin: bottom;
   }
-  
-  ul li a span:nth-child(4) {
+  .icon  ul li a span:nth-child(4) {
     top: 0;
     right: 0;
     transform: scale(0);
     transform-origin: top;
   }
-  
-  ul li a span:nth-child(2),
-  ul li a span:nth-child(4) {
+  .icon  ul li a span:nth-child(2),.icon  ul li a span:nth-child(4) {
     width: 0.3rem; /* 3px diviso per uniformità */
     height: 100%;
     background: #D4AF37;
   }
-  
-  ul li a:hover span:nth-child(2) {
+  .icon  ul li a:hover span:nth-child(2) {
     transform: scale(1);
     transform-origin: top;
     transition: transform 1s;
   }
   
-  ul li a:hover span:nth-child(4) {
+.icon ul li a:hover span:nth-child(4) {
     transform: scale(1);
     transform-origin: bottom;
     transition: transform 1s;
@@ -239,81 +225,106 @@ a {
 }
 
 .sidebar paragraph1 {
-    font-size: 125%;
+    font-size: 150%;
     color: black;
     white-space: pre-line;
 }
 
-.sidebar paragraph2 {
-    display: block;
-    font-size: 125%; /* Imposta la dimensione del carattere del paragrafo */
-    color: black; /* Imposta il colore del testo del paragrafo */
-    text-align: right; /* Centra orizzontalmente il testo */
-    white-space: pre-line; /* Fa sì che i caratteri di ritorno a capo siano rispettati */
-    position: relative; /* Imposta il posizionamento assoluto */
-    bottom: -30%; /* Distanza dal basso */
-    left: -2.5%;
-}
-
-.sidebar paragraph2 .corona {
+.sidebar paragraph1 .corona {
   display: inline-block;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  animation: coronabeat 3s infinite alternate;
+  transition: opacity 1s ease-in-out;
+  animation: coronabeat 2s infinite alternate;
 }
 
 @keyframes coronabeat {
   0% {
-      transform: scale(1);
+      transform: scale(2.5);
       opacity: 0;
   }
   100% {
-      transform: scale(1.2);
+      transform: scale(5);
       opacity: 1;
   }
 }
 
 .main-content-2 {
   display: grid;
-  grid-template-columns: 3fr 3fr;
+  grid-template-columns: 1fr 1fr; /* Modificato per avere colonne di larghezza uguale */
   justify-content: center;
   align-items: stretch;
   min-height: 150vh;
 }
 
-.section-1 {
+.section-3 {
   background: #D4AF37;
   color: black;
   width: 100%; /* Regola la larghezza desiderata */
-  text-align: center;
+  text-align: left;
   border-bottom: 3.5px solid black; /* Aggiunge una riga di bordo nera alla fine */
-}
+  }
 
-.section-1 h2 {
+.section-3 h2 {
   font-size: 2rem;
   text-align: center; /* Centra orizzontalmente la scritta */
-  margin: 50px 0; /* Aggiungi margine sopra e sotto al titolo */
+  margin: 20px 0; /* Aggiunto margine sopra e sotto al titolo */
   color: black;
 }
 
-.section-1 paragraph1 {
+.section-3 ul {
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.section-3 li {
+  margin-bottom: 15px;
+}
+
+.section-3 strong {
   font-size: 125%;
-  color: black;
-  white-space: pre-line;
+  font-weight: bold;
+  display: block; /* Impedisce la sovrapposizione con il paragrafo successivo */
+  margin-bottom: 5px; /* Aggiunge spazio tra il strong e il paragrafo successivo */
 }
 
-.section-1 paragraph2 {
-  display: block;
-  font-size: 125%; /* Imposta la dimensione del carattere del paragrafo */
-  color: black; /* Imposta il colore del testo del paragrafo */
-  text-align: left; /* Centra orizzontalmente il testo */
-  white-space: pre-line; /* Fa sì che i caratteri di ritorno a capo siano rispettati */
-  position: relative; /* Imposta il posizionamento assoluto */
-  bottom: -10%; /* Distanza dal basso */
-  left: 2.5%;
+.section-3 ul li p {  
+  font-size: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px; /* Aggiunge spazio sotto il paragrafo */
 }
 
-.section-2 {
+.section-3 ul ul {
+  margin-top: 10px; /* Aggiunge spazio sopra e sotto la sottolista */
+}
+
+.section-3 ul ul li {  
+  font-size: 125%;
+  margin: 10px 0; /* Aggiunge spazio sopra e sotto ogni elemento della sottolista */
+}
+
+.laurea {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.laurea paragraph1 .tocco {
+  font-size: 100%;
+  display: inline-block;
+  transition: opacity 1s ease-in-out;
+  animation: coronabeat 2s infinite alternate;
+}
+
+@keyframes coronabeat {
+0% {
+    transform: scale(2.5);
+    opacity: 0;
+}
+100% {
+    transform: scale(5);
+    opacity: 1;
+}
+}
+
+.section-4 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,42 +332,80 @@ a {
   color: #D4AF37;
 }
 
-.section-3 {
+.section-5 {
   display: flex;
   background: #D4AF37;
   color: black;
 }
 
-.section-4 {
+.section-6 {
   background: black;
   color: #D4AF37;
   width: 100%; /* Regola la larghezza desiderata */
-  text-align: center;
+  text-align: left;
   border-top: 3.5px solid #D4AF37; /* Aggiunge una riga di bordo nera alla fine */
   border-bottom: 3.5px solid #D4AF37;
 }
 
-.section-4 h2 {
+.section-6 h2 {
   font-size: 2rem;
   text-align: center; /* Centra orizzontalmente la scritta */
-  margin: 50px 0; /* Aggiungi margine sopra e sotto al titolo */
-}
-
-.section-4 paragraph1 {
-  font-size: 125%;
+  margin: 20px 0; /* Aggiunto margine sopra e sotto al titolo */
   color: #D4AF37;
-  white-space: pre-line;
 }
 
-.section-4 paragraph2 {
-  display: block;
-  font-size: 125%; /* Imposta la dimensione del carattere del paragrafo */
-  color: #D4AF37; /* Imposta il colore del testo del paragrafo */
-  text-align: right; /* Centra orizzontalmente il testo */
-  white-space: pre-line; /* Fa sì che i caratteri di ritorno a capo siano rispettati */
-  position: relative; /* Imposta il posizionamento assoluto */
-  bottom: -10%; /* Distanza dal basso */
-  left: -2.5%;
+.section-6 ul {
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.section-6 li {
+  margin-bottom: 15px;
+}
+
+.section-6 strong {
+  font-size: 125%;
+  font-weight: bold;
+  display: block; /* Impedisce la sovrapposizione con il paragrafo successivo */
+  margin-bottom: 5px; /* Aggiunge spazio tra il strong e il paragrafo successivo */
+}
+
+.section-6 ul li p {  
+  font-size: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px; /* Aggiunge spazio sotto il paragrafo */
+}
+
+.section-6 ul ul {
+  margin-top: 10px; /* Aggiunge spazio sopra e sotto la sottolista */
+}
+
+.section-6 ul ul li {  
+  font-size: 125%;
+  margin: 10px 0; /* Aggiunge spazio sopra e sotto ogni elemento della sottolista */
+}
+
+.lavoro {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.lavoro paragraph1 .computer {
+  font-size: 100%;
+  display: inline-block;
+  transition: opacity 1s ease-in-out;
+  animation: coronabeat 2s infinite alternate;
+}
+
+@keyframes coronabeat {
+0% {
+    transform: scale(2.5);
+    opacity: 0;
+}
+100% {
+    transform: scale(5);
+    opacity: 1;
+}
 }
 
 /*Zona immagine*/
@@ -515,8 +564,7 @@ a {
 /*Scritte icone quando compaiono*/
 .menu-3 li a span {
   position: absolute;
-  transform: translateY(calc(-750%));
-  width: 100%;
+  transform: translateY(calc(-300%));
   font-size: 15px;
   white-space: nowrap;
   pointer-events: none;
