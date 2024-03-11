@@ -160,54 +160,44 @@ a {
 
 /*Parte centrale del body*/
 .main-content {
-    display: grid;
-    grid-template-columns: 4fr 2fr;
-    justify-content: center;
-    align-items: stretch; /* Per estendere l'altezza a 100% */
-    min-height: 100vh; /* Altezza minima al 100% della viewport */
-    background: black;
-    color: #D4AF37;
-    /*background: radial-gradient(ellipse at top, #D4AF37, transparent),
-                radial-gradient(ellipse at bottom, purple, transparent);*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
 }
 
-.body-content {
-    width: 100%; /* Regola la larghezza desiderata */
-    text-align: center;
+.section-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: #D4AF37;
 }
 
 /*Zona immagine*/
 .image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 75%;
-    max-width: 500px;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
   }
   
   /*Proprio la card*/
   .card-body {
-    position: relative;
-    border: 0.2rem solid #D4AF37;
-    overflow: hidden;
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
+  position: relative;
+  border: 0.2rem solid #D4AF37;
+  overflow: hidden;
+  border-radius: 50%;
   }
   
   /* Immagini all'interno delle card */
   .card-body img {
     display: block;
-    width: 100%;
-    position: absolute;
-    top: -55px; /* Regola la posizione verso il basso */
-    left: 83px; /* Regola la posizione verso sinistra */
-    transform: scale(1.4); /* Modifica il valore di scala a seconda del livello di zoom desiderato */
+  width: 100%;
   }
 
-.sidebar {
+.section-2 {
     justify-content: center;
     align-items: stretch; /* Per estendere l'altezza a 100% */
     min-height: 100vh; /* Altezza minima al 100% della viewport */
@@ -217,20 +207,20 @@ a {
     text-align: center;
 }
 
-.sidebar h2 {
+.section-2 h2 {
     font-size: 2rem;
     text-align: center; /* Centra orizzontalmente la scritta */
     margin: 50px 0; /* Aggiungi margine sopra e sotto al titolo */
     color: black;
 }
 
-.sidebar paragraph1 {
+.section-2 paragraph1 {
     font-size: 150%;
     color: black;
     white-space: pre-line;
 }
 
-.sidebar paragraph1 .corona {
+.section-2 paragraph1 .corona {
   display: inline-block;
   transition: opacity 1s ease-in-out;
   animation: coronabeat 2s infinite alternate;
@@ -245,14 +235,6 @@ a {
       transform: scale(5);
       opacity: 1;
   }
-}
-
-.main-content-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Modificato per avere colonne di larghezza uguale */
-  justify-content: center;
-  align-items: stretch;
-  min-height: 150vh;
 }
 
 .section-3 {
@@ -334,24 +316,25 @@ a {
 
 .section-5 {
   display: flex;
-  background: #D4AF37;
-  color: black;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: #D4AF37;
+  border-bottom: 3.5px solid #D4AF37;
 }
 
 .section-6 {
-  background: black;
-  color: #D4AF37;
+  background: #D4AF37;
+  color: black;
   width: 100%; /* Regola la larghezza desiderata */
   text-align: left;
-  border-top: 3.5px solid #D4AF37; /* Aggiunge una riga di bordo nera alla fine */
-  border-bottom: 3.5px solid #D4AF37;
 }
 
 .section-6 h2 {
   font-size: 2rem;
   text-align: center; /* Centra orizzontalmente la scritta */
   margin: 20px 0; /* Aggiunto margine sopra e sotto al titolo */
-  color: #D4AF37;
+  color: black;
 }
 
 .section-6 ul {
@@ -445,7 +428,7 @@ a {
 /*Proprio la card*/
 .card-body-3 {
   position: relative;
-  border: 0.2rem solid black;
+  border: 0.2rem solid #D4AF37;
   overflow: hidden;
   border-radius: 50%;
 }
