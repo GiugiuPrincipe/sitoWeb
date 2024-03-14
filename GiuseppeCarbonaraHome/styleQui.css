@@ -181,7 +181,7 @@ a {
 }
 
 .container p {
-  font-size: 100%;
+  font-size: 125%;
   color: black;
 }
 
@@ -264,11 +264,11 @@ a {
 }
 
 
-.corona {
+.corona p {
   text-align: center;
 }
 
-.corona paragraph1 .corona {
+.corona p .corona {
   margin-bottom: 70px;
   display: inline-block;
   transition: opacity 1s ease-in-out;
@@ -342,11 +342,11 @@ a {
   /* Aggiunge spazio sopra e sotto ogni elemento della sottolista */
 }
 
-.laurea {
+.laurea p {
   text-align: center;
 }
 
-.laurea paragraph1 .tocco {
+.laurea p .tocco {
   margin-bottom: 70px;
   display: inline-block;
   transition: opacity 1s ease-in-out;
@@ -483,11 +483,11 @@ a {
   /* Aggiunge spazio sopra e sotto ogni elemento della sottolista */
 }
 
-.lavoro {
+.lavoro p {
   text-align: center;
 }
 
-.lavoro paragraph1 .computer {
+.lavoro p .computer {
   margin: 50px;
   display: inline-block;
   transition: opacity 1s ease-in-out;
