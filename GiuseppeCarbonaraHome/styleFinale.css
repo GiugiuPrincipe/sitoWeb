@@ -13,7 +13,6 @@
     "footer";
   font-family: 'Poppins', sans-serif;
   max-height: 100vh;
-  background-color: #1F252E;
 
 }
 
@@ -23,8 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #00E8F8;
-  color: black;
+  background-color: #8C4786;
 }
 
 .left-head {
@@ -43,10 +41,11 @@
   border-radius: 50%;
 }
 
-.header-text {
+/* .header-text {
   font-size: 32px;
   margin: 20px;
-}
+  color: #C5A6C2;
+} */
 
 .menu {
   display: flex;
@@ -56,7 +55,7 @@
 }
 
 a {
-  color: black;
+  color: #C5A6C2;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
@@ -68,24 +67,26 @@ a {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: #1F252E;
+  background-color: #C5A6C2;
+  max-width: 100%; /* Imposta larghezza massima */
+  padding: 0 20px; /* Aggiungi padding per migliorare la leggibilità sui dispositivi mobili */
 }
 
 .left-section {
   align-self: center;
-  margin: 100px;
+  margin: 75px;
 }
 
 .main-section h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 600;
-  color: #fff;
+  color: #792B72;
 }
 
 .main-section p {
-  margin-top: 1rem;
-  font-size: .98rem;
-  color: #fff;
+  margin-top: rem;
+  font-size: 2rem;
+  color: #792B72;
 }
 
 .social {
@@ -96,9 +97,9 @@ a {
 }
 
 .social a {
-  color: #00E8F8;
+  color: #792B72;
   font-size: 1rem;
-  border: 1.6px solid #00E8F8;
+  border: 1.6px solid #792B72;
   border-radius: 50%;
   padding: .35rem;
   text-align: center;
@@ -106,25 +107,28 @@ a {
 }
 
 .social a:hover {
-  color: #1F252E;
-  background-color: #00E8F8;
-  box-shadow: 0 0 20px #00E8F8;
+  color: #C5A6C2;
+  background-color: #9D6398;
+  box-shadow: 0 0 20px #9D6398;
   transition: all .3s ease-in-out;
 }
 
-.main-section h1 span:nth-child(1) {
-  font-size: 1.5rem;
-}
-
-.main-section h1 span:nth-child(2) {
-  color: #00E8F8;
-}
-
 .images {
-  box-shadow: 0px 16px 4px -10px #00E8F8;
-  width: 528px;
+  box-shadow: 0px 16px 4px -10px #792B72;
+  width: 520px;
   background-size: cover;
   margin: 25px 50px;
+  transition: transform 0.5s;
+  transform: scale(0.8); /* Imposta una scala iniziale più piccola */
+}
+
+.main-section .images{
+  transition: all 2000ms ease;
+  cursor: pointer;
+}
+
+.main-section .images:hover{
+  transform: scale(1.0);
 }
 
 @keyframes check {
@@ -139,11 +143,23 @@ a {
   }
 }
 
-@media only screen and (max-width:480px) {
-  section {
-    margin: 1rem 1.5rem;
+@media screen and (max-width: 990px) {
+  .main-section {
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   }
+}
 
+@media screen and (max-width:600px) {
+  body {
+      height: auto;
+  }
+  .main-section {
+      grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+      overflow-x: hidden;
+  }
+  .images {
+      width: 400px;
+  }
 }
 
 .main-footer {
@@ -152,8 +168,8 @@ a {
   align-items: center;
   justify-content: center;
   /* Aggiunto per centrare orizzontalmente tutto il contenuto */
-  background-color: #00E8F8;
-  color: black;
+  background-color: #8C4786;
+  color: #C5A6C2;
   flex-wrap: wrap;
   /* Per far andare a capo gli elementi se non c'è abbastanza spazio */
 }
